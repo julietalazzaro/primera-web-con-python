@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <h2>Hola {{username}}</h2>
+        <p>
+            El msj es un .html
+        </p>
+        {% if is_premium%}
+            <p>el premium</p>
+        {% else %}
+            <p>el gratis</p>
+        {% endif %}
+
+        {% if courses %}
+        <p>listado de cursos</p>
+            <ul>
+                {% for course in courses %}
+                    <li>{{ course }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <img src="{{ url_for('static', filename='images/icono.png')}}" alt="">
+
+{% endblock %}
